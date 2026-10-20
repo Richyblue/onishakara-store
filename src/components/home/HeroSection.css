@@ -1,0 +1,366 @@
+
+.hero-campaign {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: min(780px, calc(100svh - 110px));
+    min-height: clamp(590px, 88svh, 850px);
+    overflow: hidden;
+    background: #080807;
+    color: #fcf9f0;
+  }
+  
+  .hero-campaign__background {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background-color: #171612;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(1.001);
+    animation: heroImageReveal 1s ease-out both;
+  }
+  
+  .hero-campaign__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+  }
+  
+  .hero-campaign__overlay--bottom {
+    background: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 94%) 0%,
+      rgb(0 0 0 / 74%) 22%,
+      rgb(0 0 0 / 24%) 57%,
+      rgb(0 0 0 / 8%) 100%
+    );
+  }
+  
+  .hero-campaign__overlay--side {
+    background: linear-gradient(
+      90deg,
+      rgb(0 0 0 / 76%) 0%,
+      rgb(0 0 0 / 50%) 30%,
+      rgb(0 0 0 / 10%) 68%,
+      rgb(0 0 0 / 14%) 100%
+    );
+  }
+  
+  .hero-campaign__content {
+    width: 100%;
+    max-width: 850px;
+    padding: 100px 0 96px;
+    margin-left: max(5vw, calc((100vw - 1280px) / 2));
+    margin-right: 24px;
+    animation: heroContentReveal 800ms 100ms ease-out both;
+  }
+  
+  .hero-campaign__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: #e9c349;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+  
+  .hero-campaign__eyebrow-line {
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #e9c349;
+  }
+  
+  .hero-campaign__title {
+    margin: 0 0 22px;
+    color: #fcf9f0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(54px, 6.2vw, 88px);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 0.99;
+  }
+  
+  .hero-campaign__title span {
+    color: #e9c349;
+    font-style: italic;
+    font-weight: 400;
+  }
+  
+  .hero-campaign__description {
+    max-width: 530px;
+    margin: 0 0 34px;
+    color: rgb(252 249 240 / 86%);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+  }
+  
+  .hero-campaign__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+  }
+  
+  .hero-campaign__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 48px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    line-height: 1.5;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      border-color 200ms ease;
+  }
+  
+  .hero-campaign__button .material-symbols-outlined {
+    font-size: 17px;
+    transition: transform 200ms ease;
+  }
+  
+  .hero-campaign__button:hover .material-symbols-outlined {
+    transform: translateX(4px);
+  }
+  
+  .hero-campaign__button--primary {
+    padding: 0 24px;
+    background: #fcf9f0;
+    border: 1px solid #fcf9f0;
+    color: #111;
+  }
+  
+  .hero-campaign__button--primary:hover {
+    background: #e9c349;
+    border-color: #e9c349;
+    color: #1c1c17;
+  }
+  
+  .hero-campaign__button--secondary {
+    min-height: 42px;
+    border-bottom: 1px solid rgb(252 249 240 / 48%);
+    color: #fcf9f0;
+  }
+  
+  .hero-campaign__button--secondary:hover {
+    border-color: #e9c349;
+    color: #e9c349;
+  }
+  
+  .hero-campaign__edition {
+    position: absolute;
+    right: max(5vw, calc((100vw - 1280px) / 2));
+    bottom: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    color: rgb(252 249 240 / 62%);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1.6;
+    text-align: right;
+  }
+  
+  .hero-campaign__edition span:first-child {
+    color: #e9c349;
+    font-weight: 700;
+  }
+  
+  .hero-campaign__scroll {
+    position: absolute;
+    bottom: 0;
+    left: max(5vw, calc((100vw - 1280px) / 2));
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgb(252 249 240 / 58%);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    transform: translateY(-18px);
+  }
+  
+  .hero-campaign__scroll > span:first-child {
+    width: 30px;
+    height: 1px;
+    background: #e9c349;
+  }
+  
+  @keyframes heroImageReveal {
+    from {
+      opacity: 0.7;
+      transform: scale(1.025);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes heroContentReveal {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .hero-campaign__background {
+      background-position: center 25%;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .hero-campaign {
+      min-height: 720px;
+    }
+  
+    .hero-campaign__background {
+      background-position: 58% center;
+    }
+  
+    .hero-campaign__content {
+      max-width: 650px;
+      padding: 90px 0 100px;
+      margin-left: 32px;
+    }
+  
+    .hero-campaign__title {
+      font-size: clamp(52px, 8vw, 72px);
+    }
+  
+    .hero-campaign__description {
+      max-width: 460px;
+      font-size: 14px;
+    }
+  
+    .hero-campaign__edition {
+      right: 28px;
+      bottom: 24px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .hero-campaign {
+      min-height: 680px;
+      min-height: min(760px, calc(100svh - 94px));
+      align-items: flex-end;
+    }
+  
+    .hero-campaign__background {
+      background-position: 56% center;
+    }
+  
+    .hero-campaign__overlay--bottom {
+      background: linear-gradient(
+        0deg,
+        rgb(0 0 0 / 96%) 0%,
+        rgb(0 0 0 / 82%) 30%,
+        rgb(0 0 0 / 32%) 68%,
+        rgb(0 0 0 / 12%) 100%
+      );
+    }
+  
+    .hero-campaign__overlay--side {
+      background: linear-gradient(
+        90deg,
+        rgb(0 0 0 / 36%),
+        transparent 100%
+      );
+    }
+  
+    .hero-campaign__content {
+      padding: 70px 20px 90px;
+      margin: 0;
+    }
+  
+    .hero-campaign__eyebrow {
+      gap: 9px;
+      margin-bottom: 17px;
+      font-size: 8px;
+      letter-spacing: 0.16em;
+    }
+  
+    .hero-campaign__eyebrow-line {
+      width: 24px;
+    }
+  
+    .hero-campaign__title {
+      margin-bottom: 18px;
+      font-size: clamp(43px, 12vw, 64px);
+      line-height: 1.03;
+    }
+  
+    .hero-campaign__description {
+      max-width: 400px;
+      margin-bottom: 25px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+  
+    .hero-campaign__actions {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .hero-campaign__button--primary {
+      min-height: 46px;
+      padding: 0 18px;
+    }
+  
+    .hero-campaign__button--secondary {
+      min-height: 38px;
+    }
+  
+    .hero-campaign__edition {
+      display: none;
+    }
+  
+    .hero-campaign__scroll {
+      left: 20px;
+      font-size: 7px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .hero-campaign__background,
+    .hero-campaign__content {
+      animation: none;
+    }
+  
+    .hero-campaign__button,
+    .hero-campaign__button .material-symbols-outlined {
+      transition: none;
+    }
+  }
+  

@@ -1,0 +1,236 @@
+
+.store-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgb(252 249 240 / 96%);
+    box-shadow: 0 1px 8px rgb(0 0 0 / 4%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .store-header__main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1280px;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  
+  .store-header__brand {
+    display: inline-flex;
+    align-items: center;
+    justify-self: start;
+    gap: 10px;
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  .store-header__logo {
+    display: block;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+  }
+  
+  .store-header__brand span {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+  }
+  
+  .store-header__actions {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 13px;
+  }
+
+  .wishlist-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  
+  .wishlist-btn:hover,
+  .wishlist-btn:focus,
+  .wishlist-btn:active {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .wishlist-heart {
+    font-size: 17px;
+    line-height: 1;
+  }
+  
+  .wishlist-count {
+    position: absolute;
+    top: -7px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: #c62828;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 5;
+  }
+  
+  .store-header__icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 30px;
+    min-height: 36px;
+    padding: 4px;
+    border: 0;
+    background: transparent;
+    color: #1c1c17;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 180ms ease;
+  }
+  
+  .store-header__icon:hover {
+    color: #735c00;
+  }
+  
+  .store-header__icon .material-symbols-outlined {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .store-header__badge {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    display: grid;
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    place-items: center;
+    border-radius: 50%;
+    background: #735c00;
+    color: #fff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 9px;
+  }
+  
+  .store-header__cart-count {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  
+  .store-header__account {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background 180ms ease;
+  }
+  
+  .store-header__account:hover {
+    background: #735c00;
+  }
+  
+  .store-header__account .material-symbols-outlined {
+    font-size: 19px;
+  }
+  
+  .store-header__menu {
+    display: none;
+  }
+  
+  @media (max-width: 1199px) {
+    .store-header__main {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 14px;
+      padding: 0 22px;
+    }
+  
+    .store-header__menu {
+      display: inline-flex;
+    }
+  
+    .store-header__brand {
+      justify-self: start;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .store-header__main {
+      min-height: 64px;
+      gap: 5px;
+      padding: 0 10px;
+    }
+  
+    .store-header__brand {
+      gap: 5px;
+    }
+  
+    .store-header__logo {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .store-header__brand span {
+      font-size: 11px;
+      letter-spacing: 0.07em;
+    }
+  
+    .store-header__actions {
+      gap: 2px;
+    }
+  
+    .store-header__icon {
+      min-width: 26px;
+      padding: 2px;
+    }
+  
+    .store-header__icon .material-symbols-outlined {
+      font-size: 18px;
+    }
+  
+    .store-header__account {
+      width: 27px;
+      height: 27px;
+    }
+  }
+  

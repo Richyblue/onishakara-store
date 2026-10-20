@@ -1,0 +1,282 @@
+
+.curated-collections {
+    padding: clamp(70px, 9vw, 120px) 0;
+    background: #f3efe5;
+    color: #24231f;
+  }
+  
+  .curated-collections__inner {
+    width: min(1320px, calc(100% - 80px));
+    margin: 0 auto;
+  }
+  
+  .curated-collections__heading {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .curated-collections__eyebrow {
+    margin: 0 0 15px;
+    color: #927638;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+  }
+  
+  .curated-collections__title {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  
+  .curated-collections__title em {
+    color: #9c8350;
+    font-weight: 400;
+  }
+  
+  .curated-collections__intro {
+    margin: 18px 0 0;
+    color: #777064;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  
+  .curated-collections__tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 34px;
+    margin: 42px 0 30px;
+    border-bottom: 1px solid #d9d1c2;
+  }
+  
+  .curated-collections__tab {
+    position: relative;
+    padding: 0 0 15px;
+    border: 0;
+    background: transparent;
+    color: #777064;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+  }
+  
+  .curated-collections__tab::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: #a68b51;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+  }
+  
+  .curated-collections__tab.is-active {
+    color: #24231f;
+  }
+  
+  .curated-collections__tab.is-active::after {
+    transform: scaleX(1);
+  }
+  
+  .curated-collections__panel {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height: 480px;
+    background: #fcf9f0;
+  }
+  
+  .curated-collections__image-wrap {
+    position: relative;
+    min-height: 480px;
+    overflow: hidden;
+    background: #e5dfd2;
+  }
+  
+  .curated-collections__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+    animation: collection-image-in 350ms ease;
+  }
+  
+  .curated-collections__image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 12px;
+    background: rgb(25 25 22 / 82%);
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+  }
+  
+  .curated-collections__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(35px, 5vw, 76px);
+    overflow: hidden;
+  }
+  
+  .curated-collections__content-eyebrow {
+    margin: 0 0 22px;
+    color: #927638;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .curated-collections__feature-title {
+    position: relative;
+    z-index: 1;
+    max-width: 440px;
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(31px, 3.3vw, 46px);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  
+  .curated-collections__rule {
+    width: 48px;
+    height: 1px;
+    margin: 27px 0;
+    background: #b89a58;
+  }
+  
+  .curated-collections__description {
+    position: relative;
+    z-index: 1;
+    max-width: 390px;
+    margin: 0;
+    color: #777064;
+    font-size: 12px;
+    line-height: 2;
+  }
+  
+  .curated-collections__link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 32px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b89a58;
+    color: #24231f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .curated-collections__link span {
+    color: #927638;
+    font-size: 15px;
+  }
+  
+  .curated-collections__watermark {
+    position: absolute;
+    right: 12px;
+    bottom: -50px;
+    color: rgb(184 154 88 / 9%);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 220px;
+    font-style: italic;
+    line-height: 1;
+    pointer-events: none;
+  }
+  
+  @keyframes collection-image-in {
+    from {
+      opacity: 0.65;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .curated-collections__panel {
+      grid-template-columns: 1fr;
+    }
+  
+    .curated-collections__image-wrap,
+    .curated-collections__image {
+      min-height: 440px;
+      max-height: 600px;
+    }
+  
+    .curated-collections__content {
+      min-height: 360px;
+      padding: 50px 8%;
+    }
+  
+    .curated-collections__feature-title {
+      max-width: 600px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .curated-collections__inner {
+      width: calc(100% - 36px);
+    }
+  
+    .curated-collections__tabs {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 24px;
+      overflow-x: auto;
+      margin-top: 32px;
+    }
+  
+    .curated-collections__tab {
+      flex-shrink: 0;
+      font-size: 10px;
+    }
+  
+    .curated-collections__image-wrap,
+    .curated-collections__image {
+      min-height: 340px;
+    }
+  
+    .curated-collections__content {
+      min-height: 340px;
+      padding: 38px 25px;
+    }
+  
+    .curated-collections__feature-title {
+      font-size: 34px;
+    }
+  
+    .curated-collections__watermark {
+      right: 0;
+      font-size: 170px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .curated-collections__image {
+      animation: none;
+    }
+  
+    .curated-collections__tab::after {
+      transition: none;
+    }
+  }
+  

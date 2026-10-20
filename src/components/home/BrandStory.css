@@ -1,0 +1,177 @@
+
+.brand-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 620px;
+    background: #f0ebdf;
+    color: #24231f;
+  }
+  
+  .brand-story__image {
+    position: relative;
+    min-height: 540px;
+    overflow: hidden;
+    background: #d9d0bf;
+  }
+  
+  .brand-story__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 540px;
+    object-fit: cover;
+    object-position: center 35%;
+    transition: transform 800ms ease;
+  }
+  
+  .brand-story__image:hover img {
+    transform: scale(1.025);
+  }
+  
+  .brand-story__image-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    padding: 10px 13px;
+    background: rgb(25 25 22 / 80%);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  
+  .brand-story__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(40px, 7vw, 100px);
+    overflow: hidden;
+  }
+  
+  .brand-story__eyebrow {
+    margin: 0 0 25px;
+    color: #927638;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+  }
+  
+  .brand-story__title {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(34px, 4vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  
+  .brand-story__title em {
+    color: #9c8350;
+    font-weight: 400;
+  }
+  
+  .brand-story__divider {
+    width: 54px;
+    height: 1px;
+    margin: 30px 0;
+    background: #b89a58;
+  }
+  
+  .brand-story__paragraph {
+    max-width: 430px;
+    margin: 0 0 17px;
+    color: #625d52;
+    font-size: 13px;
+    line-height: 2;
+  }
+  
+  .brand-story__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b89a58;
+    color: #24231f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 180ms ease;
+  }
+  
+  .brand-story__link span {
+    color: #927638;
+    font-size: 15px;
+  }
+  
+  .brand-story__link:hover {
+    color: #927638;
+  }
+  
+  .brand-story__signature {
+    position: absolute;
+    right: 25px;
+    bottom: -50px;
+    color: rgb(184 154 88 / 10%);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 250px;
+    font-style: italic;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  @media (max-width: 900px) {
+    .brand-story {
+      grid-template-columns: 1fr;
+    }
+  
+    .brand-story__image,
+    .brand-story__image img {
+      min-height: 460px;
+      max-height: 620px;
+    }
+  
+    .brand-story__content {
+      padding: 65px 8%;
+    }
+  
+    .brand-story__title {
+      font-size: clamp(36px, 7vw, 52px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .brand-story__image,
+    .brand-story__image img {
+      min-height: 370px;
+    }
+  
+    .brand-story__image-caption {
+      bottom: 14px;
+      left: 14px;
+      font-size: 8px;
+    }
+  
+    .brand-story__content {
+      padding: 52px 24px;
+    }
+  
+    .brand-story__eyebrow {
+      font-size: 9px;
+      letter-spacing: 1.7px;
+    }
+  
+    .brand-story__paragraph {
+      font-size: 12px;
+    }
+  
+    .brand-story__signature {
+      right: 8px;
+      font-size: 190px;
+    }
+  }
+  

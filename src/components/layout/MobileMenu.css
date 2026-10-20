@@ -1,0 +1,178 @@
+
+.mobile-navigation {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+  }
+  
+  .mobile-navigation__backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: rgb(0 0 0 / 58%);
+    cursor: pointer;
+    animation: mobileBackdropIn 200ms ease both;
+  }
+  
+  .mobile-navigation__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(88%, 410px);
+    height: 100%;
+    height: 100dvh;
+    padding: 30px 26px;
+    overflow-y: auto;
+    background: #fcf9f0;
+    color: #1c1c17;
+    box-shadow: -12px 0 40px rgb(0 0 0 / 12%);
+    animation: mobilePanelIn 240ms ease both;
+  }
+  
+  .mobile-navigation__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 26px;
+    border-bottom: 1px solid #e5e0d5;
+  }
+  
+  .mobile-navigation__eyebrow {
+    color: #735c00;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+  }
+  
+  .mobile-navigation__header h2 {
+    margin: 8px 0 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+  }
+  
+  .mobile-navigation__close {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid #ded8ca;
+    border-radius: 50%;
+    background: transparent;
+    color: #1c1c17;
+    cursor: pointer;
+  }
+  
+  .mobile-navigation__links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+  
+  .mobile-navigation__link {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) 20px;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e9e3d8;
+    color: #1c1c17;
+    text-decoration: none;
+    transition: color 180ms ease;
+  }
+  
+  .mobile-navigation__link:hover {
+    color: #735c00;
+  }
+  
+  .mobile-navigation__number {
+    color: #a69b84;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 10px;
+  }
+  
+  .mobile-navigation__label {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .mobile-navigation__arrow {
+    justify-self: end;
+    font-size: 17px;
+    color: #8e7137;
+  }
+  
+  .mobile-navigation__footer {
+    margin-top: auto;
+    padding-top: 38px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  
+  .mobile-navigation__footer-line {
+    display: block;
+    width: 42px;
+    height: 1px;
+    margin-bottom: 15px;
+    background: #b89a58;
+  }
+  
+  .mobile-navigation__footer p {
+    margin: 0 0 8px;
+    color: #735c00;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+  }
+  
+  .mobile-navigation__footer > span:last-child {
+    color: #81796b;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  
+  @keyframes mobilePanelIn {
+    from {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes mobileBackdropIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-navigation__panel,
+    .mobile-navigation__backdrop {
+      animation: none;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .mobile-navigation__panel {
+      padding: 24px 20px;
+    }
+  
+    .mobile-navigation__label {
+      font-size: 18px;
+    }
+  }
+  
