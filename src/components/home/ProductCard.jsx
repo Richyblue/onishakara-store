@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
+import { getProductUrl } from "../../utils/seo";
 
 export default function ProductCard({ product }) {
   return (
     <article className="product-card">
-      <Link to={`/product/${product.slug}`} className="product-card__image">
+      <Link to={getProductUrl(product)} className="product-card__image">
         <img src={product.image} alt={product.name} loading="lazy" />
       </Link>
 
@@ -12,7 +13,7 @@ export default function ProductCard({ product }) {
         <p className="product-card__category">{product.category}</p>
 
         <h3>
-          <Link to={`/product/${product.slug}`}>
+          <Link to={getProductUrl(product)}>
             {product.name}
           </Link>
         </h3>

@@ -6,9 +6,9 @@ const links = [
   { label: "Home", path: "/", end: true },
   { label: "Shop All", path: "/shop" },
   { label: "New Arrivals", path: "/new-arrivals" },
-  { label: "Collections", path: "/collections" },
-  { label: "Categories", path: "/categories" },
-  { label: "About Us", path: "/about-us" },
+  { label: "Collections", path: "/shop" },
+  { label: "Categories", path: "/shop" },
+  { label: "About Us", path: "/" },
 ];
 
 export default function Navigation() {

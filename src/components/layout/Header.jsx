@@ -59,7 +59,7 @@ export default function Header({
           </button>
 
           <a
-            href="#home"
+            href="/"
             className="store-header__brand"
             aria-label="Onishakara home"
           >

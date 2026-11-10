@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Seo, getProductUrl, slugify, productSchema } from "../utils/seo";
 import { getStoreProducts } from "../services/storeApi";
 import { useCart } from "../context/CartContext";
 import "./ProductDetailsPage.css";
@@ -208,9 +209,11 @@ const getApiProduct = (result, id) => {
             ? [result.data]
             : [];
 
-  return products.find(
-    (product) => String(getProductId(product)) === String(id)
-  );
+  return products.find((product) => {
+    const productId = String(getProductId(product));
+    const productSlug = slugify(product?.slug || getProductName(product));
+    return productId === String(id) || productSlug === String(id);
+  });
 };
 
 function ProductDetailsPage({
@@ -219,8 +222,12 @@ function ProductDetailsPage({
   onToggleWishlist,
   isWishlisted = false,
 }) {
-  const { id, productId } = useParams();
-  const routeProductId = productId ?? id;
+  const { id, productId, productSlug } = useParams();
+  const routeValue = productSlug ?? productId ?? id;
+  const routeProductId = routeValue?.includes("--")
+    ? routeValue.slice(routeValue.lastIndexOf("--") + 2)
+    : routeValue;
+  const navigate = useNavigate();
 
   const { addToCart } = useCart();
 
@@ -283,6 +290,14 @@ function ProductDetailsPage({
   }, [loadProduct, retryKey]);
 
   const product = apiProduct;
+
+  useEffect(() => {
+    if (!product) return;
+    const canonicalPath = getProductUrl(product);
+    if (window.location.pathname !== canonicalPath) {
+      navigate(canonicalPath, { replace: true });
+    }
+  }, [product, navigate]);
 
   const images = useMemo(
     () => (product ? getProductImages(product) : []),
@@ -384,6 +399,8 @@ function ProductDetailsPage({
 
   if (loading) {
     return (
+      <>
+      <Seo title="Loading product | Onishakara" description="Loading the Onishakara product catalogue." />
       <main className="pd-page">
         <div className="pd-container">
           <div className="pd-empty-state" role="status">
@@ -393,11 +410,14 @@ function ProductDetailsPage({
           </div>
         </div>
       </main>
+      </>
     );
   }
 
   if (loadError || !product) {
     return (
+      <>
+      <Seo title="Product unavailable | Onishakara" noindex />
       <main className="pd-page">
         <div className="pd-container">
           <nav className="pd-breadcrumb" aria-label="Breadcrumb">
@@ -426,6 +446,7 @@ function ProductDetailsPage({
           </div>
         </div>
       </main>
+      </>
     );
   }
 
@@ -436,7 +457,17 @@ function ProductDetailsPage({
   const price = getProductPrice(product);
   const currency = product.currency || "NGN";
 
+  const canonicalProductPath = getProductUrl(product);
+  const productSeoDescription = String(productDescription).slice(0, 300);
+
   return (
+    <>
+    <Seo
+      title={`${productName} | Onishakara`}
+      description={productSeoDescription}
+      image={currentImage?.src || images[0]?.src}
+      schema={productSchema(product, canonicalProductPath)}
+    />
     <div className="pd-page">
       <div className="pd-container">
         <nav className="pd-breadcrumb" aria-label="Breadcrumb">
@@ -850,6 +881,7 @@ function ProductDetailsPage({
         </div>
       )}
     </div>
+    </>
   );
 }
 

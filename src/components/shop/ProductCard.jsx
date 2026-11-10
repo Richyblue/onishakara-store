@@ -2,6 +2,7 @@ import "./ProductCard.css";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { Link } from "react-router-dom";
+import { getProductUrl } from "../../utils/seo";
 
 // Your Onishakara backend URL
 const API_BASE_URL = (
@@ -121,7 +122,7 @@ function ProductCard({
       <div className="product-card__image-wrap">
         <Link
           className="product-card__image-link"
-          to={product.href || `/product/${product.id || product._id}`}
+          to={getProductUrl(product)}
           aria-label={`View ${
             product.name || product.productName || "product"
           }`}

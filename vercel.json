@@ -1,0 +1,25 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/products/:productSlug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/product/:productId",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/shop",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/new-arrivals",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/checkout",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -157,7 +157,7 @@ export default function NewArrivals({
             </p>
           </div>
 
-          <a className="new-arrivals__view-all" href="#shop-all">
+          <a className="new-arrivals__view-all" href="/shop">
             Explore the collection <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -243,7 +243,7 @@ export default function NewArrivals({
         )}
 
         <div className="new-arrivals__bottom">
-          <a href="#shop-all" className="new-arrivals__all-button">
+          <a href="/shop" className="new-arrivals__all-button">
             Discover All Pieces
           </a>
         </div>

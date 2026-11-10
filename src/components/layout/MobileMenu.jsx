@@ -4,8 +4,8 @@ import "./MobileMenu.css";
 
 const menuItems = [
   { label: "Home", href: "#home", number: "01" },
-  { label: "Shop All", href: "#shop-all", number: "02" },
-  { label: "New Arrivals", href: "#new-arrivals", number: "03" },
+  { label: "Shop All", href: "/shop", number: "02" },
+  { label: "New Arrivals", href: "/new-arrivals", number: "03" },
   { label: "Collections", href: "#collections", number: "04" },
   { label: "Categories", href: "#categories", number: "05" },
   { label: "About Us", href: "#about-us", number: "06" },

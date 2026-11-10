@@ -6,19 +6,19 @@ const defaultLinkGroups = [
   {
     title: "EXPLORE",
     links: [
-      { label: "Shop All", href: "#shop-all" },
-      { label: "New Arrivals", href: "#new-arrivals" },
-      { label: "Categories", href: "#categories" },
-      { label: "Collections", href: "#collections" },
+      { label: "Shop All", href: "/shop" },
+      { label: "New Arrivals", href: "/new-arrivals" },
+      { label: "Categories", href: "/shop" },
+      { label: "Collections", href: "/shop" },
     ],
   },
   {
     title: "THE HOUSE",
     links: [
-      { label: "Our Story", href: "#about-us" },
-      { label: "Contact Us", href: "#contact" },
-      { label: "Shipping Information", href: "#shipping" },
-      { label: "Returns & Exchanges", href: "#returns" },
+      { label: "Our Story", href: "/" },
+      { label: "Contact Us", href: "/shop" },
+      { label: "Shipping Information", href: "/shop" },
+      { label: "Returns & Exchanges", href: "/shop" },
     ],
   },
 ];
@@ -64,7 +64,7 @@ export default function Footer({
     <footer className="site-footer">
       <div className="site-footer__main">
         <div className="site-footer__brand">
-          <a className="site-footer__logo" href="#home" aria-label="Onishakara home">
+          <a className="site-footer__logo" href="/" aria-label="Onishakara home">
             ONISHAKARA<span>.</span>
           </a>
 
@@ -178,7 +178,7 @@ export default function Footer({
           CONSIDERED STYLE · DISTINCTIVE LIVING
         </p>
 
-        <a className="site-footer__back-top" href="#home">
+        <a className="site-footer__back-top" href="/">
           Back to top ↑
         </a>
       </div>
